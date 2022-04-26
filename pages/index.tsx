@@ -27,6 +27,35 @@ const Home = ({ collections }: Props) => {
         </span>{' '}
         NFT Market Place
       </h1>
+
+      <main className="bg-slate-100 p-10 shadow-xl shadow-rose-400/20">
+        <div
+          className="2xl: grid grid-cols-4 space-x-3 md:grid-cols-2
+          lg:grid-cols-3"
+        >
+          {collections.map((collection) => (
+            <Link href={`/nft/${collection.slug.current}`}>
+              <div
+                className="flex cursor-pointer flex-col items-center
+              transition-all duration-200 hover:scale-105"
+              >
+                <img
+                  className="h-96 w-60 rounded-2xl object-cover"
+                  src={urlFor(collection.mainImage).url()}
+                  alt=""
+                />
+
+                <div className="p-5">
+                  <h2 className="text-3xl">{collection.title}</h2>
+                  <p className="mt-2 text-sm text-gray-400">
+                    {collection.description}
+                  </p>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </main>
     </div>
   )
 }

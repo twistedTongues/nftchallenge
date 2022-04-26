@@ -47,5 +47,13 @@ export default {
         hotspot: true,
       },
     },
+    {
+      name: 'previewImage',
+      title: 'Preview image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
   ],
 }
